@@ -1,0 +1,173 @@
+[
+  {
+    "id": "shoulder-aria",
+    "name": "SHOULDER BAG",
+    "price": 120,
+    "compareAtPrice": 150,
+    "images": ["/products/belt-black.webp", "/products/polene-burgundy.webp"],
+    "category": "shoulder",
+    "inStock": true,
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": [
+          { "id": "black", "label": "Black" },
+          { "id": "tan", "label": "Tan" },
+          { "id": "cream", "label": "Cream" }
+        ]
+      },
+      {
+        "type": "size",
+        "label": "Size",
+        "options": [
+          { "id": "m", "label": "M" },
+          { "id": "l", "label": "L" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hand-noir",
+    "name": "HAND BAG",
+    "price": 80,
+    "compareAtPrice": 100,
+    "images": ["/products/bagco.jpeg", "/products/china-brown.jpg"],
+    "category": "hand",
+    "inStock": true,
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": [
+          { "id": "black", "label": "Black" },
+          { "id": "gold", "label": "Gold hardware" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "crescent-luna",
+    "name": "CROSSBODY",
+    "price": 140,
+    "images": ["/products/athena-5600.jpg", "/products/china-green.jpg"],
+    "category": "crossbody",
+    "inStock": true,
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": [
+          { "id": "black", "label": "Black" },
+          { "id": "olive", "label": "Olive" },
+          { "id": "stone", "label": "Stone" },
+          { "id": "ivory", "label": "Ivory" },
+          { "id": "navy", "label": "Navy" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tote-vertex",
+    "name": "TOTE BAG",
+    "price": 165,
+    "images": ["/products/china-brown.jpg", "/products/bagco.jpeg"],
+    "category": "tote",
+    "inStock": true,
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": [
+          { "id": "black", "label": "Black" },
+          { "id": "camel", "label": "Camel" }
+        ]
+      },
+      {
+        "type": "size",
+        "label": "Size",
+        "options": [
+          { "id": "regular", "label": "Regular" },
+          { "id": "large", "label": "Large" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bucket-soleil",
+    "name": "BUCKET BAG",
+    "price": 70,
+    "compareAtPrice": 100,
+    "images": ["/products/china-green.jpg", "/products/china-black.jpg"],
+    "category": "bucket",
+    "inStock": true,
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": [{ "id": "black", "label": "Black" }]
+      }
+    ]
+  },
+  {
+    "id": "clutch-quilt",
+    "name": "EVENING CLUTCH",
+    "price": 95,
+    "images": ["/products/polene-burgundy.webp", "/products/athena-5600.jpg"],
+    "category": "clutch",
+    "inStock": true,
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": [
+          { "id": "black", "label": "Black" },
+          { "id": "champagne", "label": "Champagne" },
+          { "id": "ruby", "label": "Ruby" },
+          { "id": "emerald", "label": "Emerald" },
+          { "id": "sapphire", "label": "Sapphire" },
+          { "id": "graphite", "label": "Graphite" },
+          { "id": "pearl", "label": "Pearl" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "travel-utility",
+    "name": "TRAVEL CROSSBODY",
+    "price": 110,
+    "images": ["/products/belt-black.webp", "/products/china-brown.jpg"],
+    "category": "travel",
+    "inStock": true,
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": [
+          { "id": "mono", "label": "Monochrome" },
+          { "id": "sand", "label": "Sand" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hand-shoulder-duo",
+    "name": "HAND & SHOULDER BAG",
+    "price": 155,
+    "compareAtPrice": 190,
+    "images": ["/products/polene-biege.png", "/products/china-black.jpg"],
+    "category": "hand",
+    "inStock": true,
+    "variants": [
+      {
+        "type": "color",
+        "label": "Color",
+        "options": [
+          { "id": "black", "label": "Black" },
+          { "id": "tan", "label": "Tan" },
+          { "id": "cream", "label": "Cream" }
+        ]
+      }
+    ]
+  }
+]
