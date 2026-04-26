@@ -1,3 +1,4 @@
+
 export type AnalyticsEvent =
   | { type: "page_view"; path: string }
   | { type: "product_click"; productId: string; source: string }
