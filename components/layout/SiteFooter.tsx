@@ -11,8 +11,8 @@ export function SiteFooter() {
         <p className="text-center text-4xl font-bold uppercase tracking-tight sm:text-5xl md:text-6xl">
           Bagharmony
         </p>
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="mt-12 grid grid-cols-2 gap-10 md:grid-cols-4">
+          <div className="col-span-2 md:col-span-1">
             <p className="text-xs font-semibold uppercase tracking-wide">
               Newsletter
             </p>
