@@ -4,10 +4,15 @@ import { buildWhatsAppInquiryUrl } from "@/lib/whatsapp";
 import { getWhatsAppNumber } from "@/lib/env";
 import { track } from "@/lib/analytics";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export function FloatingWhatsAppButton() {
   const pathname = usePathname();
-  const phone = getWhatsAppNumber();
+  const [phone, setPhone] = useState("");
+
+  useEffect(() => {
+    setPhone(getWhatsAppNumber());
+  }, []);
 
   if (!phone) return null;
 

@@ -6,6 +6,7 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { getWhatsAppNumber } from "@/lib/env";
 import { track } from "@/lib/analytics";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 type Props = {
   product: Product;
@@ -21,7 +22,12 @@ export function WhatsAppOrderButton({
   className,
 }: Props) {
   const pathname = usePathname();
-  const phone = getWhatsAppNumber();
+  const [phone, setPhone] = useState("");
+
+  useEffect(() => {
+    setPhone(getWhatsAppNumber());
+  }, []);
+
   const disabled = !product.inStock || !phone;
 
   const baseClass =
