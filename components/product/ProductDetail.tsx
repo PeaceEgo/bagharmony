@@ -10,7 +10,6 @@ import { WhatsAppOrderButton } from "./WhatsAppOrderButton";
 import { productBadgeLabel } from "@/lib/productBadge";
 import type { SelectedVariants } from "@/lib/whatsapp";
 import { defaultSelection } from "@/lib/whatsapp";
-import { buildWhatsAppMessage } from "@/lib/whatsapp";
 
 type Props = { product: Product };
 
@@ -112,18 +111,12 @@ export function ProductDetail({ product }: Props) {
           ))}
         </div>
 
-        <div className="mt-10 space-y-4">
+        <div className="mt-10">
           <WhatsAppOrderButton
             product={product}
             selected={selected}
             source="product_detail"
           />
-          <div className="rounded border border-black/10 bg-surface/60 p-4 text-xs uppercase leading-relaxed text-muted">
-            <p className="text-[10px] font-semibold text-black">Message preview</p>
-            <pre className="mt-2 whitespace-pre-wrap font-sans text-[11px] normal-case text-black">
-              {buildWhatsAppMessage(product, selected)}
-            </pre>
-          </div>
         </div>
       </div>
     </div>
