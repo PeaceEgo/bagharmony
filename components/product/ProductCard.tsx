@@ -64,10 +64,9 @@ export function ProductCard({ product, source, priority }: Props) {
         source={`card:${source}`}
         className="mt-1 w-full bg-[#25D366] px-3 py-2 text-[10px] font-semibold uppercase tracking-wide text-white hover:bg-[#1ebe57] disabled:bg-neutral-300"
       />
-      {process.env.NODE_ENV === "development" &&
-      !process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ? (
+      {process.env.NODE_ENV === "development" && !process.env.WHATSAPP_NUMBER ? (
         <p className="text-[10px] text-red-600">
-          Add NEXT_PUBLIC_WHATSAPP_NUMBER to enable WhatsApp.
+          Add WHATSAPP_NUMBER to enable WhatsApp.
         </p>
       ) : null}
     </article>

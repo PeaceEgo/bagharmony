@@ -35,7 +35,7 @@ export function WhatsAppOrderButton({
         disabled
         title={
           !phone
-            ? "Set NEXT_PUBLIC_WHATSAPP_NUMBER in international format (e.g. 2349131399569)"
+            ? "Set WHATSAPP_NUMBER in international format (e.g. 2349131399569)"
             : undefined
         }
         className={baseClass}
