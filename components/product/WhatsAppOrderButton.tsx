@@ -22,33 +22,47 @@ export function WhatsAppOrderButton({
 }: Props) {
   const pathname = usePathname();
   const phone = getWhatsAppNumber();
+  const disabled = !product.inStock || !phone;
+
+  const baseClass =
+    className ??
+    "block w-full bg-[#25D366] px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#1ebe57] disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-600";
+
+  if (disabled) {
+    return (
+      <button
+        type="button"
+        disabled
+        title={
+          !phone
+            ? "Set NEXT_PUBLIC_WHATSAPP_NUMBER in your environment"
+            : undefined
+        }
+        className={baseClass}
+      >
+        Order on WhatsApp
+      </button>
+    );
+  }
+
+  const href = buildWhatsAppUrl(phone, product, selected);
 
   return (
-    <button
-      type="button"
-      disabled={!product.inStock || !phone}
-      title={
-        !phone
-          ? "Set NEXT_PUBLIC_WHATSAPP_NUMBER in your environment"
-          : undefined
-      }
-      className={
-        className ??
-        "w-full bg-[#25D366] px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#1ebe57] disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-600"
-      }
-      onClick={() => {
-        if (!phone || !product.inStock) return;
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={baseClass}
+      onClick={() =>
         void track({
           type: "whatsapp_click",
           productId: product.id,
           path: pathname,
           source,
-        });
-        const url = buildWhatsAppUrl(phone, product, selected);
-        window.open(url, "_blank", "noopener,noreferrer");
-      }}
+        })
+      }
     >
       Order on WhatsApp
-    </button>
+    </a>
   );
 }

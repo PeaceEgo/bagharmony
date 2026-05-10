@@ -44,7 +44,12 @@ export function buildWhatsAppMessage(
 
 function buildWaMeUrl(phoneE164: string, text: string): string {
   const digits = phoneE164.replace(/\D/g, "");
-  return `https://wa.me/${digits}?${new URLSearchParams({ text }).toString()}`;
+  // api.whatsapp.com matches Meta's click-to-chat docs and tends to open more
+  // reliably in WhatsApp Desktop than wa.me + popup-style window.open().
+  return `https://api.whatsapp.com/send?${new URLSearchParams({
+    phone: digits,
+    text,
+  }).toString()}`;
 }
 
 export function buildWhatsAppUrl(
