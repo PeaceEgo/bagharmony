@@ -1,4 +1,5 @@
 import type { Product } from "./types";
+import { getStoreConfig } from "./store-config";
 
 export type SelectedVariants = Record<string, string>;
 
@@ -62,9 +63,10 @@ export function buildWhatsAppUrl(
 
 /** General inquiry when no product is selected (e.g. floating contact button). */
 export function buildWhatsAppInquiryUrl(phoneE164: string): string {
+  const brand = getStoreConfig().brandName;
   return buildWaMeUrl(
     phoneE164,
-    "Hi! I'm browsing Bagharmony and would like more information.",
+    `Hi! I'm browsing ${brand} and would like more information.`,
   );
 }
 

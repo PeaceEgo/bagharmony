@@ -1,26 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const copy =
-  "Unveil a world of elegance with our curated collection of bags that suit every style and occasion.";
+import { getStoreConfig } from "@/lib/store-config";
 
 export function Hero() {
+  const store = getStoreConfig();
+  const headline =
+    store.hero.headline?.trim() || store.brandName;
+  const [imgA, imgB, imgC] = store.hero.images;
+  const [altA, altB, altC] = store.hero.imageAlts;
+
   return (
     <section className="bg-black text-white">
       <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6 md:pb-20 md:pt-14">
         <h1 className="text-center text-4xl font-bold uppercase tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          Bagharmony
+          {headline}
         </h1>
 
         <div className="mt-10 grid gap-6 md:mt-14 md:grid-cols-3 md:gap-8">
           <div className="flex flex-col gap-6">
             <p className="max-w-sm text-xs uppercase leading-relaxed text-white/80 md:text-[11px]">
-              {copy}
+              {store.hero.intro}
             </p>
             <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden bg-[#f2f2f2] md:mx-0">
               <Image
-                src="/products/belt-black.webp"
-                alt="Model with black belt bag"
+                src={imgA}
+                alt={altA}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -32,8 +36,8 @@ export function Hero() {
           <div className="flex flex-col justify-end md:pt-16">
             <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden bg-[#f2f2f2] md:mx-0">
               <Image
-                src="/products/belt-25.webp"
-                alt="Model with green belt bag"
+                src={imgB}
+                alt={altB}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -51,8 +55,8 @@ export function Hero() {
             </Link>
             <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden bg-[#f2f2f2] md:mx-0">
               <Image
-                src="/products/belt-blue.webp"
-                alt="Model with blue belt bag"
+                src={imgC}
+                alt={altC}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 33vw"

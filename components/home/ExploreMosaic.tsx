@@ -5,6 +5,7 @@ import { ProductPrice } from "@/components/product/ProductPrice";
 import { ProductImageCornerBadge } from "@/components/product/ProductImageCornerBadge";
 import { variantCountLabel } from "@/lib/products";
 import { productBadgeLabel } from "@/lib/productBadge";
+import { getStoreConfig } from "@/lib/store-config";
 
 type Props = {
   spotlight: Product;
@@ -12,7 +13,11 @@ type Props = {
 };
 
 export function ExploreMosaic({ spotlight, pair }: Props) {
+  const mosaic = getStoreConfig().exploreMosaic;
   const [a, b] = pair;
+  const [detailLeft, detailRight] = mosaic.detailImages;
+  const [detailAltLeft, detailAltRight] = mosaic.detailAlts;
+
   return (
     <section
       id="collections"
@@ -22,8 +27,8 @@ export function ExploreMosaic({ spotlight, pair }: Props) {
         <div className="grid gap-4 md:grid-cols-4 md:grid-rows-4 md:gap-5">
           <div className="relative aspect-[3/4] overflow-hidden bg-surface md:col-span-2 md:col-start-1 md:row-span-4 md:row-start-1 md:aspect-auto md:min-h-[520px]">
             <Image
-              src="/products/china-black.jpg"
-              alt="Collection lifestyle"
+              src={mosaic.largeImage}
+              alt={mosaic.largeImageAlt}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -65,8 +70,8 @@ export function ExploreMosaic({ spotlight, pair }: Props) {
 
           <div className="relative aspect-[16/9] overflow-hidden bg-surface md:col-span-2 md:col-start-3 md:row-span-2 md:row-start-3 md:aspect-auto md:min-h-[220px]">
             <Image
-              src="/products/china-brown.jpg"
-              alt="Model with small bag"
+              src={mosaic.middleImage}
+              alt={mosaic.middleImageAlt}
               fill
               loading="lazy"
               className="object-cover"
@@ -90,11 +95,10 @@ export function ExploreMosaic({ spotlight, pair }: Props) {
         <div className="mt-14 grid gap-10 md:grid-cols-2 md:items-center">
           <div>
             <p className="text-3xl font-bold uppercase md:text-4xl">
-              {spotlight.category} bags
+              {spotlight.category} {mosaic.spotlightHeadingSuffix}
             </p>
             <p className="mt-4 max-w-md text-xs uppercase leading-relaxed text-muted">
-              Unveil a world of elegance with our curated collection of bags that
-              suit every style and occasion.
+              {mosaic.spotlightIntro}
             </p>
             <Link
               href={`/products/${spotlight.id}`}
@@ -122,8 +126,8 @@ export function ExploreMosaic({ spotlight, pair }: Props) {
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden bg-surface">
             <Image
-              src="/products/belt-blue.webp"
-              alt="Handbag detail"
+              src={detailLeft}
+              alt={detailAltLeft}
               fill
               loading="lazy"
               className="object-cover"
@@ -132,8 +136,8 @@ export function ExploreMosaic({ spotlight, pair }: Props) {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden bg-surface">
             <Image
-              src="/products/belt-25.webp"
-              alt="Quilted bag detail"
+              src={detailRight}
+              alt={detailAltRight}
               fill
               loading="lazy"
               className="object-cover"

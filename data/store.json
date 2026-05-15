@@ -1,0 +1,49 @@
+{
+  "brandName": "Bagharmony",
+  "tagline": "Handbags & accessories",
+  "description": "Curated handbags with effortless ordering on WhatsApp. No cart, no checkout.",
+  "logoPath": "",
+  "logoAlt": "Bagharmony",
+  "hero": {
+    "headline": "",
+    "intro": "Unveil a world of elegance with our curated collection of bags that suit every style and occasion.",
+    "images": [
+      "/products/belt-black.webp",
+      "/products/belt-25.webp",
+      "/products/belt-blue.webp"
+    ],
+    "imageAlts": [
+      "Hero product image 1",
+      "Hero product image 2",
+      "Hero product image 3"
+    ]
+  },
+  "marquee": "Fast delivery in Lagos",
+  "dualBanners": [
+    {
+      "href": "/shop?category=hand",
+      "title": "Handbags",
+      "subtitle": "Unveil a world of elegance — structured silhouettes for every day.",
+      "image": "/products/china-black.jpg",
+      "imageAlt": "Handbags collection"
+    },
+    {
+      "href": "/shop?category=crossbody",
+      "title": "Crossbody",
+      "subtitle": "Hands-free movement with refined hardware and soft leathers.",
+      "image": "/products/athena-5600.jpg",
+      "imageAlt": "Crossbody collection"
+    }
+  ],
+  "exploreMosaic": {
+    "largeImage": "/products/china-black.jpg",
+    "largeImageAlt": "Collection lifestyle",
+    "middleImage": "/products/china-brown.jpg",
+    "middleImageAlt": "Collection highlight",
+    "detailImages": ["/products/belt-blue.webp", "/products/belt-25.webp"],
+    "detailAlts": ["Product detail 1", "Product detail 2"],
+    "spotlightIntro": "Unveil a world of elegance with our curated collection of bags that suit every style and occasion.",
+    "spotlightHeadingSuffix": "bags"
+  },
+  "spotlightProductId": "travel-utility"
+}

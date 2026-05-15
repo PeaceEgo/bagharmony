@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useId, useState } from "react";
+import { getStoreConfig } from "@/lib/store-config";
 
 const links = [
   { href: "/shop", label: "Shop" },
@@ -12,15 +14,32 @@ const links = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const menuId = useId();
+  const store = getStoreConfig();
+  const showLogo = Boolean(store.logoPath?.trim());
 
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
         <Link
           href="/"
-          className="text-sm font-semibold uppercase tracking-[0.2em] text-black"
+          className="relative flex h-8 min-w-[7rem] items-center text-black"
         >
-          Bagharmony
+          {showLogo ? (
+            <span className="relative block h-8 w-[140px]">
+              <Image
+                src={store.logoPath.trim()}
+                alt={store.logoAlt || store.brandName}
+                fill
+                className="object-contain object-left"
+                sizes="140px"
+                priority
+              />
+            </span>
+          ) : (
+            <span className="text-sm font-semibold uppercase tracking-[0.2em]">
+              {store.brandName}
+            </span>
+          )}
         </Link>
         <button
           type="button"

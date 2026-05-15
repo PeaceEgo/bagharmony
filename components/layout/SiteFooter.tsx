@@ -1,15 +1,18 @@
 import Link from "next/link";
+import { getStoreConfig } from "@/lib/store-config";
 
 const company = ["Contact us", "FAQ's", "Order lookup", "Returns"];
 const about = ["Careers", "News & blog", "Press center", "Suppliers"];
 const social = ["Facebook", "Instagram", "(X) Twitter", "LinkedIn"];
 
 export function SiteFooter() {
+  const store = getStoreConfig();
+
   return (
     <footer className="bg-black text-white">
       <div className="mx-auto max-w-6xl px-4 py-16 md:px-6">
         <p className="text-center text-4xl font-bold uppercase tracking-tight sm:text-5xl md:text-6xl">
-          Bagharmony
+          {store.brandName}
         </p>
         <div className="mt-12 grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
@@ -78,7 +81,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-12 border-t border-white/30 pt-6 text-center text-[10px] uppercase tracking-wide text-white/60">
-          © {new Date().getFullYear()} Bagharmony. All rights reserved.
+          © {new Date().getFullYear()} {store.brandName}. All rights reserved.
         </div>
       </div>
     </footer>
